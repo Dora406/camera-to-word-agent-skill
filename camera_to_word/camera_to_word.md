@@ -34,4 +34,4 @@ JSON string indicating completion status and file path.
 ## Notes
 - **【开源部署说明】**：请确保本 `.md` 配置文件与 `doc_agent_qwen3_safe.py` 脚本放置在**同一个文件夹**内。Agent 框架会切换到当前目录并使用相对路径运行。
 - 本工具默认在本地加载 `qwen3-vl:4b` 模型，推荐使用具备强大 GPU 显存的专业工作站（如 Dell Precision 系列）以获得流畅体验。用户亦可自行在 `.py` 脚本中修改为其他本地轻量化模型，或者更大模型（如 `qwen2.5-vl`或者`qwen3-vl:30b`）。
-- 任务执行完毕后，脚本会自动释放摄像头资源并退出，无后台残留。
+- 任务执行后，摄像头会自动开启，用户进行操作，agent不需要再什么。
