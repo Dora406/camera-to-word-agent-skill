@@ -1,4 +1,4 @@
-📷 camera-to-word-agent-skill
+# 📷 camera-to-word-agent-skill
 
 🚀 **一款专为 OpenClaw、Codex 等 AI Agent 框架打造的多模态智能体技能工具**。
 
@@ -22,30 +22,52 @@
 确保你的电脑上已经安装了 [Ollama](https://ollama.com/)，并在终端中下载并运行 4B 视觉大模型：
 ```bash
 ollama run qwen3-vl:4b
+
+```
+
 ### 2. 下载本技能包
-将本仓库克隆或下载到本地，保持 camera_to_word.md 与 doc_agent_qwen3_4b.py 处于同一个文件夹中。
+
+将本仓库克隆或下载到本地，保持 `camera_to_word.md` 与 `doc_agent_qwen3_4b.py` 处于**同一个文件夹**中。
+
 ### 3. 第三方依赖安装
+
 本技能具备环境自愈能力，AI Agent 在首次唤醒时会自动尝试执行安装。你也可以手动在终端执行安装：
+
 ```bash
 pip install opencv-python requests python-docx
 
-🎮 实时交互快捷键说明
+```
+
+---
+
+## 🎮 实时交互快捷键说明
+
 运行脚本后，系统会弹出一个带有科技感引导框的摄像头预览窗口。你可以通过以下快捷键进行控制：
-[Space] 空格键：捕捉当前摄像头画面 $\rightarrow$ 送入本地大模型解析 $\rightarrow$ 桌面生成精排Word $\rightarrow$ 程序自动安全退出。
-[L] 键：(备用/演示保险) 绕过摄像头，直接读取电脑桌面上的 test.jpg 图像进行高精度解析 $\rightarrow$ 程序自动安全退出。
-[Esc] 键：随时放弃操作，直接关闭窗口并安全退出，完全释放摄像头权限。
 
-🤖 智能体集成说明 (以 OpenClaw / Codex 为例)
+* **`[Space] 空格键`**：捕捉当前摄像头画面 $\rightarrow$ 送入本地大模型解析 $\rightarrow$ 桌面生成精排Word $\rightarrow$ **程序自动安全退出**。
+* **`[L] 键`**：*(备用/演示保险)* 绕过摄像头，直接读取电脑桌面上的 `test.jpg` 图像进行高精度解析 $\rightarrow$ **程序自动安全退出**。
+* **`[Esc] 键`**：随时放弃操作，直接关闭窗口并安全退出，完全释放摄像头权限。
 
-本仓库的 camera_to_word/ 文件夹下已内置了标准技能定义配置文件 camera_to_word.md（或 SKILL.md）。
-意图触发词 (Triggers)
+---
+
+## 🤖 智能体集成说明 (以 OpenClaw / Codex 为例)
+
+本仓库的 `camera_to_word/` 文件夹下已内置了标准技能定义配置文件 `camera_to_word.md`（或 `SKILL.md`）。
+
+### 意图触发词 (Triggers)
 
 当用户对 AI Agent 发出包含以下类似含义的语音或文字指令时，将自动唤醒此工具：
-        “帮我把摄像头里的内容导到word里面”
-        “帮我扫描面前的纸质文件到Word”
-        “拍照转Word”
-        “启动摄像头看一眼这个文件并转成Word”
 
-框架调用原理
+> * “帮我把摄像头里的内容导到word里面”
+> * “帮我扫描面前的纸质文件到Word”
+> * “拍照转Word”
+> * “启动摄像头看一眼这个文件并转成Word”
+
+### 框架调用原理
+
 Agent 框架检测到意图后，会切换至该技能目录，以相对路径静默拉起脚本：
+
+```bash
 python ./doc_agent_qwen3_4b.py
+
+```
