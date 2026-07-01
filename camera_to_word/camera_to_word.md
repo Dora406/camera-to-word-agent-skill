@@ -32,5 +32,5 @@ python C:\Users\dell\Desktop\doc_agent_qwen3_safe.py
 JSON string indicating completion status and file path.
 
 ## Notes
-- 该工具运行在戴尔 Precision 专业工作站上，本地加载 Qwen3-VL:30B 模型。
+- 该工具运行在戴尔 Precision 专业工作站上，本地加载 Qwen3-VL:4b 模型。
 - 任务执行完毕后，脚本会自动释放摄像头资源并退出，无需手动关闭后台。
